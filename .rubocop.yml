@@ -1,0 +1,135 @@
+inherit_from: rubocop-todo.yml
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+
+# Use UTF-8 as the source file encoding.
+Style/Encoding:
+  Enabled: false
+
+# Sometimes you can't do this because of the &. operator
+Rails/Blank:
+  Enabled: false
+
+# Limit lines to 80 characters.
+Layout/LineLength:
+  Max: 120
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Rails/EnvironmentVariableAccess:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
+
+# Default is 5
+Metrics/ParameterLists:
+  Max: 6
+
+# Avoid methods longer than 10 lines of code
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 20
+
+# Limit modules to have a length of 768
+Metrics/ModuleLength:
+  Max: 768
+
+# Limit classes to have a length of 768
+Metrics/ClassLength:
+  Max: 768
+
+Metrics/AbcSize:
+  Max: 22
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Style/AccessorGrouping:
+  Enabled: true
+
+Style/BisectedAttrAccessor:
+  Enabled: true
+
+Style/RedundantAssignment:
+  Enabled: true
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Performance/AncestorsInclude:
+  Enabled: true
+
+Performance/BigDecimalWithNumericArgument:
+  Enabled: true
+
+Performance/RedundantSortBlock:
+  Enabled: true
+
+Performance/RedundantStringChars:
+  Enabled: true
+
+Performance/ReverseFirst:
+  Enabled: true
+
+Performance/SortReverse:
+  Enabled: true
+
+Performance/Squeeze:
+  Enabled: true
+
+Performance/StringInclude:
+  Enabled: true
+
+Naming/VariableNumber:
+  CheckSymbols: false
+
+################################################################## DISABLED COPS
+# These cops are disabled because we think they are a Bad Idea. If you add one
+# here, make sure to add a comment describing what the cop does, and why this
+# is a bad idea.
+
+# Forces the argument names of the block given to #reduce to be `a, e`. Only
+# applies on single-line blocks, but why would we want to force people to use
+# less descriptive names?
+Style/Documentation:
+  Enabled: false
