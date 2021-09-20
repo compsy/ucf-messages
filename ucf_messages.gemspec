@@ -7,6 +7,6 @@ Gem::Specification.new do |s|
   s.email = 'info@compsy.ch'
   s.files = ['lib/ucf_messages.rb']
   s.homepage =
-    'https://rubygems.org/gems/ucf_messages'
+    'https://github.com/compsy/ucf_messages'
   s.license = 'MIT'
 end
