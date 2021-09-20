@@ -1,6 +1,6 @@
 # UCF Messages
 
-A gem for retrieving the invitation text to send for the (u-can-feel)[https://u-can-feel.nl] project.
+A gem for retrieving the invitation text to send for the [u-can-feel](https://u-can-feel.nl) project.
 
 ### Building
 
