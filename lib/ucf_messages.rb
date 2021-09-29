@@ -30,6 +30,7 @@ class UcfMessages
       sms_pool += streak_conditions if sms_pool.empty?
       sms_pool += default_pool if sms_pool.empty?
 
+      # Sample returns a random entry from the array
       sms_pool.sample
     end
     # rubocop:enable Metrics/PerceivedComplexity
