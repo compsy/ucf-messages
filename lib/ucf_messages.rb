@@ -216,10 +216,6 @@ class UcfMessages
       @curidx.zero?
     end
 
-    def completed_some?
-      @protocol_completion.pluck(:completed).any?
-    end
-
     def missed_previous_response?
       # Minimal pattern: .C         (X = completed, C = current)
       #           index: 01
@@ -242,16 +238,6 @@ class UcfMessages
         !@protocol_completion[@curidx - 1][:completed] &&
         @protocol_completion[@curidx - 2][:completed] &&
         @protocol_completion[@curidx - 2][:streak] >= streak_size
-    end
-
-    # missed more than one in a row (but not all) prior to the current response
-    def missed_more_than_one?
-      # Minimal pattern: X..C         (X = completed, C = current)
-      #           index: 0123
-      @curidx > 2 &&
-        !@protocol_completion[@curidx - 1][:completed] &&
-        !@protocol_completion[@curidx - 2][:completed] &&
-        @protocol_completion[0..(@curidx - 3)].pluck(:completed).any?
     end
 
     def missed_everything?
