@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |s|
   s.name = 'ucf_messages'
-  s.version = '0.0.2'
+  s.version = '0.0.3'
   s.summary = 'u-can-feel invitation messages'
   s.description = 'library for determining which invitation text to use'
   s.authors = ['Ando Emerencia']
   s.email = 'info@compsy.ch'
-  s.files = ['lib/ucf_messages.rb']
+  s.files = %w[lib/ucf_messages.rb lib/activesupport_extensions.rb]
   s.homepage =
     'https://github.com/compsy/ucf_messages'
   s.license = 'MIT'
