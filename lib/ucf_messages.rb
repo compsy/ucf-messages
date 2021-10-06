@@ -15,8 +15,8 @@ class UcfMessages
 
     private
 
-    # There are two rewards: the first one is the multiplication factor for regular measurements.
-    # The second one is the multiplication factor for the streak messages, of which the threshold
+    # There are two rewards: the first one is the multiplication factor for regular responses.
+    # The second one is the multiplication factor for the streak responses, of which the threshold
     # property determines the start of the streak.
     def streak_size
       @protocol&.rewards&.second&.threshold || 3
