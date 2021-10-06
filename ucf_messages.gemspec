@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'ucf_messages'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.summary = 'u-can-feel invitation messages'
   s.description = 'library for determining which invitation text to use'
   s.authors = ['Ando Emerencia']

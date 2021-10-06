@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'activesupport_extensions'
+
 class UcfMessages
   MAX_REWARD_THRESHOLD = 5000
 
@@ -13,7 +15,7 @@ class UcfMessages
 
     private
 
-    # TODO: check this calculation! Why is there two rewards?
+    # TODO: check this calculation! Why are there two rewards?
     def streak_size
       @protocol&.rewards&.second&.threshold || 3
     end
@@ -43,7 +45,8 @@ class UcfMessages
       sms_pool = []
       1000.step(MAX_REWARD_THRESHOLD, 1000) do |threshold|
         # 1000 = 10 euro
-        sms_pool += rewards_threshold_pool(threshold) if rewards_before < threshold && rewards_after >= threshold
+        # override the current sms_pool so we only get the message for the highest threshold reached
+        sms_pool = rewards_threshold_pool(threshold) if rewards_before < threshold && rewards_after >= threshold
       end
       sms_pool
     end
@@ -110,8 +113,8 @@ class UcfMessages
     def first_invitation_pool
       [
         'Welkom bij het u-can-feel dagboekonderzoek! Doe je ook mee? We vragen je om elke week in een paar ' \
-        'minuten wat vragen te beantwoorden over hoe het met je gaat. Daarmee help j eons met ons onderzoek ' \
-        'én kun je geld verdienen. Via de link kun j emeer informatie krijgen en de eerste vragenlijst ' \
+        'minuten wat vragen te beantwoorden over hoe het met je gaat. Daarmee help je ons met ons onderzoek ' \
+        'én kun je geld verdienen. Via de link kun je meer informatie krijgen en de eerste vragenlijst ' \
         'invullen.'
       ]
     end
@@ -121,7 +124,7 @@ class UcfMessages
         'Hoi {{deze_student}}! Er staat een vragenlijst voor je klaar, vul je hem weer in? :D',
         'Een u-can-feel tip: vul drie weken achter elkaar een vragenlijst in en verdien een bonus voor elke ' \
         'vragenlijst!',
-        'Hoi {{deze_student}}! Vul direct de vovlgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
+        'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
         'ons enorm!',
         'Hallo {{deze_student}}, verdien een euro! Vul nu de vragenlijst in!',
         'Fijn dat jij meedoet! Door jou kunnen leerlingen met wie het niet zo goed gaat nog betere begeleiding ' \
