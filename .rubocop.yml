@@ -70,6 +70,15 @@ Metrics/MethodLength:
 # Limit modules to have a length of 768
 Metrics/ModuleLength:
   Max: 768
+  Exclude:
+    - 'spec/**/*'
+
+# Describe specs fail this test
+# Namespaces in rake tasks do too
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - '**/*.rake'
 
 # Limit classes to have a length of 768
 Metrics/ClassLength:
@@ -77,6 +86,8 @@ Metrics/ClassLength:
 
 Metrics/AbcSize:
   Max: 22
+  Exclude:
+    - 'spec/**/*'
 
 Metrics/CyclomaticComplexity:
   Max: 10
