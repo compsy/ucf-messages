@@ -6,7 +6,7 @@ A gem for retrieving the invitation text to send for the [u-can-feel](https://u-
 
 ```bash
 % gem build ucf_messages.gemspec
-% gem install ./ucf_messages-0.0.1.gem
+% gem install ./ucf_messages-0.0.2.gem
 ```
 
 ### Running
@@ -23,5 +23,5 @@ Hello world!
 See https://guides.rubygems.org/make-your-own-gem/ for setting credentials.
 
 ```bash
-% gem push ucf_messages-0.0.1.gem
+% gem push ucf_messages-0.0.2.gem
 ```
