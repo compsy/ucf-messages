@@ -74,7 +74,8 @@ class UcfMessages
         ]
       when 5000 # 50 euro
         [
-          'Wat heb jij je ontzettend goed ingezet! Inmiddels heb je al bijna 50 euro verdiend! Vul snel de volgende vragenlijst in.'
+          'Wat heb jij je ontzettend goed ingezet! Inmiddels heb je al bijna 50 euro verdiend! Vul snel de volgende ' \
+          'vragenlijst in.'
         ]
       else
         []
@@ -96,14 +97,16 @@ class UcfMessages
 
     def about_to_be_on_streak_pool
       [
-        'Je bent goed bezig {{deze_student}}! Vul deze vragenlijst in en bereik een bonus-streak! Je verdient dan elke week 50% meer!'
+        'Je bent goed bezig {{deze_student}}! Vul deze vragenlijst in en bereik een bonus-streak! Je verdient dan ' \
+        'elke week 50% meer!'
       ]
     end
 
     def on_streak_pool
       [
         'Fijn dat je zo behulpzaam bent, {{deze_student}}! Vul je opnieuw de vragenlijst in?',
-        'Je zit nog steeds in je bonus-streak! Je u-can-feel spaarpotje raakt al behoorlijk vol ;) Vul direct de vragenlijst in om je bonus-streak te behouden.',
+        'Je zit nog steeds in je bonus-streak! Je u-can-feel spaarpotje raakt al behoorlijk vol ;) Vul direct de ' \
+        'vragenlijst in om je bonus-streak te behouden.',
         'Bedankt voor je inzet! Ga zo door :D Er staat weer een nieuwe vragenlijst voor je klaar.',
         '{{deze_student}}, je bent een topper! Bedankt voor je goede hulp! Vul je direct de vragenlijst weer in?',
         'Goed bezig met je bonus-streak, ga zo door!',
@@ -129,10 +132,11 @@ class UcfMessages
         'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
         'ons enorm!',
         'Hallo {{deze_student}}, verdien een euro! Vul nu de vragenlijst in!',
-        'Fijn dat jij meedoet! Vul je de vragenlijst weer in? Door jou kunnen leerlingen met wie het niet zo goed gaat nog betere begeleiding ' \
-        'krijgen in de toekomst!',
+        'Fijn dat jij meedoet! Vul je de vragenlijst weer in? Door jou kunnen leerlingen met wie het niet zo goed ' \
+        'gaat nog betere begeleiding krijgen in de toekomst!',
         'Help {{je_school}} nog beter te worden in wat ze doen en vul nu de vragenlijst in!',
-        'Heel fijn dat je meedoet! Vul je de vragenlijst weer in? Hiermee help je {{je_school}} om leerlingen nog beter te begeleiden!'
+        'Heel fijn dat je meedoet! Vul je de vragenlijst weer in? Hiermee help je {{je_school}} om leerlingen nog ' \
+        'beter te begeleiden!'
       ]
     end
 
@@ -140,11 +144,13 @@ class UcfMessages
       [
         'Je hebt ons al enorm geholpen met de vragenlijsten die je hebt ingevuld, {{deze_student}}. Wil je ons ' \
         'weer helpen én daarmee geld verdienen?',
-        'Hoi {{deze_student}}, doe je deze week weer mee aan het u-can-feel onderzoek? Vul de vragenlijst in en verdien een euro.',
-        'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ons enorm!',
+        'Hoi {{deze_student}}, doe je deze week weer mee aan het u-can-feel onderzoek? Vul de vragenlijst in en ' \
+        'verdien een euro.',
+        'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
+        'ons enorm!',
         'Doe je weer mee aan het u-can-feel onderzoek, {{deze_student}}? Daarmee help je ons enorm én verdien je geld.',
-        'We hebben je al even gemist, {{deze_student}}! Help je deze week weer mee met het u-can-feel onderzoek? Het kost maar ' \
-        'een paar minuten van je tijd. Je helpt ons en je school. En je verdient er zelf ook een euro mee.'
+        'We hebben je al even gemist, {{deze_student}}! Help je deze week weer mee met het u-can-feel onderzoek? Het ' \
+        'kost maar een paar minuten van je tijd. Je helpt ons en je school. En je verdient er zelf ook een euro mee.'
       ]
     end
 

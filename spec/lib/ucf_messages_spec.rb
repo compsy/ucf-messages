@@ -63,6 +63,19 @@ describe UcfMessages do
       end
 
       context 'not everything missed' do
+        let(:expected_set) do
+          [
+            'Je hebt ons al enorm geholpen met de vragenlijsten die je hebt ingevuld, {{deze_student}}. Wil je ons ' \
+            'weer helpen én daarmee geld verdienen?',
+            'Hoi {{deze_student}}, doe je deze week weer mee aan het u-can-feel onderzoek? Vul de vragenlijst in en ' \
+            'verdien een euro.',
+            'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
+            'ons enorm!',
+            'Doe je weer mee aan het u-can-feel onderzoek, {{deze_student}}? Daarmee help je ons enorm én verdien je geld.',
+            'We hebben je al even gemist, {{deze_student}}! Help je deze week weer mee met het u-can-feel onderzoek? Het ' \
+            'kost maar een paar minuten van je tijd. Je helpt ons en je school. En je verdient er zelf ook een euro mee.'
+          ]
+        end
         it 'returns a specific message' do
           protocol_completion = [
             { completed: true, periodical: true, reward_points: 0, future: false, streak: 1 },
@@ -70,10 +83,8 @@ describe UcfMessages do
             { completed: false, periodical: true, reward_points: 0, future: false, streak: 0 },
             { completed: false, periodical: true, reward_points: 0, future: true, streak: 1 }
           ]
-          expected_message = 'Je hebt ons al enorm geholpen met de vragenlijsten die je hebt ingevuld, ' \
-                             '{{deze_student}}. Wil je ons weer helpen én daarmee geld verdienen?'
           allow(protocol_subscription).to receive(:protocol_completion).and_return(protocol_completion)
-          expect(described_class.message(response)).to eq expected_message
+          expect(expected_set).to be_member(described_class.message(response))
         end
       end
 
@@ -145,8 +156,8 @@ describe UcfMessages do
             { completed: true, periodical: true, reward_points: 0, future: false, streak: 1 },
             { completed: false, periodical: true, reward_points: 0, future: true, streak: 2 }
           ]
-          expected_message = 'Na een weekje rust ben je er sinds vorige week weer bij. Heel fijn dat je weer mee ' \
-                             'doet met het u-can-feel onderzoek! Daarmee help je ons enorm.'
+          expected_message = 'Na een weekje rust ben je er sinds vorige week weer bij. Heel fijn dat je weer mee doet met het u-can-feel ' \
+                             'onderzoek! Daarmee help je ons enorm. Vul je direct de volgende vragenlijst in?'
           allow(protocol_subscription).to receive(:protocol_completion).and_return(protocol_completion)
           expect(described_class.message(response)).to eq expected_message
         end
@@ -159,8 +170,8 @@ describe UcfMessages do
             { completed: true, periodical: true, reward_points: 0, future: false, streak: 1 },
             { completed: false, periodical: true, reward_points: 0, future: true, streak: 2 }
           ]
-          expected_message = 'Na een weekje rust ben je er sinds vorige week weer bij. Heel fijn dat je weer mee ' \
-                             'doet met het u-can-feel onderzoek! Daarmee help je ons enorm.'
+          expected_message = 'Na een weekje rust ben je er sinds vorige week weer bij. Heel fijn dat je weer mee doet met het u-can-feel ' \
+                             'onderzoek! Daarmee help je ons enorm. Vul je direct de volgende vragenlijst in?'
           allow(protocol_subscription).to receive(:protocol_completion).and_return(protocol_completion)
           expect(described_class.message(response)).to eq expected_message
         end
@@ -206,7 +217,8 @@ describe UcfMessages do
             { completed: true, periodical: true, reward_points: 0, future: false, streak: 2 },
             { completed: false, periodical: true, reward_points: 0, future: true, streak: 3 }
           ]
-          expected_message = 'Je bent goed bezig {{deze_student}}! Vul deze vragenlijst in en bereik een bonus-streak!'
+          expected_message = 'Je bent goed bezig {{deze_student}}! Vul deze vragenlijst in en bereik een bonus-streak! Je verdient dan ' \
+                             'elke week 50% meer!'
           allow(protocol_subscription).to receive(:protocol_completion).and_return(protocol_completion)
           expect(described_class.message(response)).to eq expected_message
         end
@@ -218,7 +230,8 @@ describe UcfMessages do
             { completed: true, periodical: true, reward_points: 0, future: false, streak: 2 },
             { completed: false, periodical: true, reward_points: 0, future: true, streak: 3 }
           ]
-          expected_message = 'Je bent goed bezig {{deze_student}}! Vul deze vragenlijst in en bereik een bonus-streak!'
+          expected_message = 'Je bent goed bezig {{deze_student}}! Vul deze vragenlijst in en bereik een bonus-streak! Je verdient dan ' \
+                             'elke week 50% meer!'
           allow(protocol_subscription).to receive(:protocol_completion).and_return(protocol_completion)
           expect(described_class.message(response)).to eq expected_message
         end
@@ -228,9 +241,10 @@ describe UcfMessages do
         let(:expected_set) do
           [
             'Fijn dat je zo behulpzaam bent, {{deze_student}}! Vul je opnieuw de vragenlijst in?',
-            'Je zit nog steeds in je bonus-streak! Je u-can-feel spaarpotje raakt al behoorlijk vol ;)',
-            'Bedankt voor je inzet! Ga zo door :D',
-            '{{deze_student}}, je bent een topper! Bedankt voor je goede hulp!',
+            'Je zit nog steeds in je bonus-streak! Je u-can-feel spaarpotje raakt al behoorlijk vol ;) Vul direct de ' \
+            'vragenlijst in om je bonus-streak te behouden.',
+            'Bedankt voor je inzet! Ga zo door :D Er staat weer een nieuwe vragenlijst voor je klaar.',
+            '{{deze_student}}, je bent een topper! Bedankt voor je goede hulp! Vul je direct de vragenlijst weer in?',
             'Goed bezig met je bonus-streak, ga zo door!',
             'Super dat je de vragenlijst al zo vaak achter elkaar hebt ingevuld, bedankt en ga zo door!',
             'Hoi {{deze_student}}! Vul je de vragenlijst weer in om geld te verdienen?'
@@ -266,13 +280,14 @@ describe UcfMessages do
             'Hoi {{deze_student}}! Er staat een vragenlijst voor je klaar, vul je hem weer in? :D',
             'Een u-can-feel tip: vul drie weken achter elkaar een vragenlijst in en verdien een bonus voor elke ' \
             'vragenlijst!',
-            'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je ' \
-            'helpt ons enorm!',
+            'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
+            'ons enorm!',
             'Hallo {{deze_student}}, verdien een euro! Vul nu de vragenlijst in!',
-            'Fijn dat jij meedoet! Door jou kunnen leerlingen met wie het niet zo goed gaat nog betere begeleiding ' \
-            'krijgen in de toekomst!',
+            'Fijn dat jij meedoet! Vul je de vragenlijst weer in? Door jou kunnen leerlingen met wie het niet zo goed ' \
+            'gaat nog betere begeleiding krijgen in de toekomst!',
             'Help {{je_school}} nog beter te worden in wat ze doen en vul nu de vragenlijst in!',
-            'Heel fijn dat je meedoet! Hiermee help je {{je_school}} om leerlingen nog beter te begeleiden!'
+            'Heel fijn dat je meedoet! Vul je de vragenlijst weer in? Hiermee help je {{je_school}} om leerlingen nog ' \
+            'beter te begeleiden!'
           ]
         end
         it 'returns a specific message' do
@@ -363,7 +378,8 @@ describe UcfMessages do
             { completed: true, periodical: true, reward_points: 999, future: false, streak: 1 },
             { completed: false, periodical: true, reward_points: 1, future: true, streak: 2 }
           ]
-          expected_message = 'Wat heb jij je ontzettend goed ingezet! Inmiddels heb je al bijna 50 euro verdiend!'
+          expected_message = 'Wat heb jij je ontzettend goed ingezet! Inmiddels heb je al bijna 50 euro verdiend! Vul snel de volgende ' \
+                             'vragenlijst in.'
           allow(protocol_subscription).to receive(:protocol_completion).and_return(protocol_completion)
           expect(described_class.message(response)).to eq expected_message
         end
