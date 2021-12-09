@@ -97,21 +97,21 @@ class UcfMessages
 
     def about_to_be_on_streak_pool
       [
-        'Je bent goed bezig {{deze_student}}! Vul deze vragenlijst in en bereik een bonus-streak! Je verdient dan ' \
+        'Je bent goed bezig! Vul deze vragenlijst in en bereik een bonus-streak! Je verdient dan ' \
         'elke week 50% meer!'
       ]
     end
 
     def on_streak_pool
       [
-        'Fijn dat je zo behulpzaam bent, {{deze_student}}! Vul je opnieuw de vragenlijst in?',
+        'Fijn dat je zo behulpzaam bent! Vul je opnieuw de vragenlijst in?',
         'Je zit nog steeds in je bonus-streak! Je u-can-feel spaarpotje raakt al behoorlijk vol ;) Vul direct de ' \
         'vragenlijst in om je bonus-streak te behouden.',
         'Bedankt voor je inzet! Ga zo door :D Er staat weer een nieuwe vragenlijst voor je klaar.',
-        '{{deze_student}}, je bent een topper! Bedankt voor je goede hulp! Vul je direct de vragenlijst weer in?',
+        'Je bent een topper! Bedankt voor je goede hulp! Vul je direct de vragenlijst weer in?',
         'Goed bezig met je bonus-streak, ga zo door!',
         'Super dat je de vragenlijst al zo vaak achter elkaar hebt ingevuld, bedankt en ga zo door!',
-        'Hoi {{deze_student}}! Vul je de vragenlijst weer in om geld te verdienen?'
+        'Hoi! Vul je de vragenlijst weer in om geld te verdienen?'
       ]
     end
 
@@ -126,37 +126,37 @@ class UcfMessages
 
     def default_pool
       [
-        'Hoi {{deze_student}}! Er staat een vragenlijst voor je klaar, vul je hem weer in? :D',
+        'Hoi! Er staat een vragenlijst voor je klaar, vul je hem weer in? :D',
         'Een u-can-feel tip: vul drie weken achter elkaar een vragenlijst in en verdien een bonus voor elke ' \
         'vragenlijst!',
-        'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
+        'Hoi! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
         'ons enorm!',
-        'Hallo {{deze_student}}, verdien een euro! Vul nu de vragenlijst in!',
+        'Wil je een euro verdienen? Vul nu de vragenlijst in!',
         'Fijn dat jij meedoet! Vul je de vragenlijst weer in? Door jou kunnen leerlingen met wie het niet zo goed ' \
         'gaat nog betere begeleiding krijgen in de toekomst!',
-        'Help {{je_school}} nog beter te worden in wat ze doen en vul nu de vragenlijst in!',
-        'Heel fijn dat je meedoet! Vul je de vragenlijst weer in? Hiermee help je {{je_school}} om leerlingen nog ' \
+        'Help je school nog beter te worden in wat ze doen en vul nu de vragenlijst in!',
+        'Heel fijn dat je meedoet! Vul je de vragenlijst weer in? Hiermee help je je school om leerlingen nog ' \
         'beter te begeleiden!'
       ]
     end
 
     def not_everything_missed
       [
-        'Je hebt ons al enorm geholpen met de vragenlijsten die je hebt ingevuld, {{deze_student}}. Wil je ons ' \
+        'Je hebt ons al enorm geholpen met de vragenlijsten die je hebt ingevuld. Wil je ons ' \
         'weer helpen én daarmee geld verdienen?',
-        'Hoi {{deze_student}}, doe je deze week weer mee aan het u-can-feel onderzoek? Vul de vragenlijst in en ' \
+        'Hallo, doe je deze week weer mee aan het u-can-feel onderzoek? Vul de vragenlijst in en ' \
         'verdien een euro.',
-        'Hoi {{deze_student}}! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
+        'Hoi! Vul direct de volgende vragenlijst in. Het kost je maar een paar minuten en je helpt ' \
         'ons enorm!',
-        'Doe je weer mee aan het u-can-feel onderzoek, {{deze_student}}? Daarmee help je ons enorm én verdien je geld.',
-        'We hebben je al even gemist, {{deze_student}}! Help je deze week weer mee met het u-can-feel onderzoek? Het ' \
+        'Doe je weer mee aan het u-can-feel onderzoek? Daarmee help je ons enorm én verdien je geld.',
+        'We hebben je al even gemist! Help je deze week weer mee met het u-can-feel onderzoek? Het ' \
         'kost maar een paar minuten van je tijd. Je helpt ons en je school. En je verdient er zelf ook een euro mee.'
       ]
     end
 
     def missed_everything
       [
-        'Je bent nog niet gestart met het u-can-feel dagboekonderzoek, {{deze_student}}! Doe je alsnog mee? We ' \
+        'Je bent nog niet gestart met het u-can-feel dagboekonderzoek! Doe je alsnog mee? We ' \
         'vragen je om elke week een paar minuten wat vragen te beantwoorden over hoe het met je gaat. Daarmee help ' \
         'je ons met ons onderzoek én kun je geld verdienen. Via de link kun je meer informatie krijgen en de eerste ' \
         'vragenlijst invullen.'
@@ -165,7 +165,7 @@ class UcfMessages
 
     def missed_one_after_streak
       [
-        'Je was heel goed bezig met het u-can-feel onderzoek {{deze_student}}. Probeer je opnieuw de bonus-streak ' \
+        'Je was heel goed bezig met het u-can-feel onderzoek. Probeer je opnieuw de bonus-streak ' \
         'te halen om extra geld te verdienen?'
       ]
     end
